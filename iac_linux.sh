@@ -101,17 +101,23 @@ useradd carlos -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_adm
 useradd maria -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_adm
 useradd joao -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_adm
 
+getent group $grp_adm
+
 echo $'\n'
 echo "Usuários inseridos no grupo "$grp_ven": "
 useradd debora -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_ven
 useradd sebastiana -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_ven
 useradd roberto -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_ven
 
+getent group $grp_ven
+
 echo $'\n'
 echo "Usuários inseridos no grupo "$grp_sec": "
 useradd josefina -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_sec
 useradd amanda -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_sec
 useradd rogerio -m -s /bin/bash -p $(openssl passwd -crypt $key) -G $grp_sec
+
+getent group $grp_sec
 
 echo $'\n'
 echo "##### CONFIGURANDO PERMISSÕES NOS DIRETÓRIOS #####"
